@@ -1,25 +1,26 @@
 {% extends 'base.html' %}
 
-<head>
-      <link rel="stylesheet" href="/static/css/app.css">
-</head>
-
 {% block main %}
-<h1>Properties</h1>
+<h1 class="title">Properties</h1>
 {% include 'flash_messges.html' %}
 <div class="properties">
     {% for property in properties %}
-        <div class = "grid_view">
+        <div class = "grids">
+        <div class="card text-left" style="width: 18rem;">
             {% set pic= rootdirectory ~ property.photo %}
-            <img class="propImg" src="{{ url_for('static',filename =pic)}}" width="250" height="200">
-            <h5>{{ property.title }}</h5>
+            <img class="card-img-top" src="{{ url_for('static',filename=pic) }}" width="250" height="200">
+            <div class="card-body">
+                <h5 class="card-title">{{ property.title }}</h5>
+            </div>
             <div class="card-body">
                 {{ property.location }}
                 <br>
-                <p>${{ property.price }}</p>
+                <div class="d-flex justify-content-start"><span class = "price"><h6> {{ '$'~property.price }}</h6></div></span>
             </div>   
             <div class="card-body">
-            <a href="{{ url_for('viewProp',id=property.propertyId) }}" class="btn btn-primary">View Property</a>
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('viewProp',id=property.propertyId) }}" id ="btn" class="btn btn-lg btn-primary">View Property</a>
+                </div>
             </div>
         </div>
     </div> 

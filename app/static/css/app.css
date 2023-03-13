@@ -10,7 +10,7 @@ body {
     display:flex;
      flex-direction:row;
      padding:10px;
-
+    
 }
 
 .create .grid2{
@@ -34,4 +34,42 @@ body {
 
 .card-body{
     border:12px;
+}
+
+.grids{
+    padding:15px;
+}
+
+.price{
+    margin-right: 10px;
+    padding:5px;
+    background-color:purple;
+    color:white;
+    border-radius: 30%;
+}
+
+.type{
+     background-color:orange;
+     padding:2px;
+    color:white;
+    border-radius: 30%;
+    
+}
+
+.bed{
+    padding:2px;
+}
+
+.bath{
+    padding:2px;
+    margin-left: 10px;
+}
+
+.card-text{
+    padding-top: 10px;
+}
+
+.everything{
+    width:70%;
+    align-items:center;
 }

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 class="page-header"></h1>
+
+    
+        <div>
+            {% set photo = rootdiri ~ prop.photo %}
+            
+            <img src="{{ url_for('static',filename = photo) }}"  width="470" height="490">
+            <h5> {{ prop.title }}</h5>
+            <h6> ${{prop.price }}</h6>
+            <h6>{{ prop.type }}</h6>
+
+            
+        
+            <p>{{ prop.text }}</p>
+            <br>
+               <h6> {{ prop.bedNum }} Bedrooms</h6>
+               <h6> {{ prop.bathNum }} Bathrooms</h6>
+            
+            <h6> {{ prop.location }}</h6>
+            <br>
+            <a href="#" class="btn btn-primary">Email Realtor</a>
+            </div>
+        </div>
+      
+{% endblock %}

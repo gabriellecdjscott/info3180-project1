@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+<head>
+      <link rel="stylesheet" href="/static/css/app.css">
+</head>
+
+{% block main %}
+<h1>Properties</h1>
+{% include 'flash_messges.html' %}
+<div class="properties">
+    {% for property in properties %}
+        <div class = "grid_view">
+            {% set pic= rootdirectory ~ property.photo %}
+            <img class="propImg" src="{{ url_for('static',filename =pic)}}" width="250" height="200">
+            <h5>{{ property.title }}</h5>
+            <div class="card-body">
+                {{ property.location }}
+                <br>
+                <p>${{ property.price }}</p>
+            </div>   
+            <div class="card-body">
+            <a href="{{ url_for('viewProp',id=property.propertyId) }}" class="btn btn-primary">View Property</a>
+            </div>
+        </div>
+    </div> 
+    {% endfor %}  
+    
+</div>
+{% endblock %}
